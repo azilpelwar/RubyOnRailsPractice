@@ -56,7 +56,7 @@ Install Homebrew
 	bibclean
 
 
-Installing Ruby 
+Installing Ruby: 
 
 
 	BPDC$ brew install rbenv
@@ -74,7 +74,7 @@ Installing Ruby
 	BPDC$ brew install ruby-build
 
 
-Install ruby latest version
+Install ruby latest version:
 	BPDC$ rbenv install 2.1.2
 
 	even after installing the new ruby version, the system uses the old version.
@@ -87,7 +87,7 @@ Install ruby latest version
 	Note: we can use local/shell instead of global to use ruby for current project or for current shell prompt.
 
 
-Installing RubyGEMs
+Installing RubyGEMs:
 
 	BPDC$ gem -v
 	2.2.2
@@ -110,5 +110,60 @@ Installing RubyGEMs
 
 	BPDC$ gem update --system		//update gem
 
- 
 
+Install Rails:
+	
+	First we ll install bundler, which is a application which helps the rails app to load the right ruby gem.
+
+	BPDC$ gem install bundler
+	Fetching: bundler-1.6.4.gem (100%)
+	Successfully installed bundler-1.6.4
+	Parsing documentation for bundler-1.6.4
+	Installing ri documentation for bundler-1.6.4
+	Done installing documentation for bundler after 3 seconds
+	1 gem installed
+ 	
+ 	BPDC$ gem install rails 					//install rails gem
+
+ 	BPDC$ rbenv rehash							//to refresh ruby environment with new updates/installations
+
+
+ Install MySql:
+ 	 Step 1:
+ 	 	2 was to do:
+	 	 -using installer from http://dev.mysql.com
+	 	 -using homebrew
+	 Step 2:
+ 	 	Set default password
+ 	 Step 3:
+ 	 	Install MySql RubyGem
+
+	To set the password to mySql:
+
+	 	BPDC$ mysqladmin -u root password
+		New password: 
+		Confirm new password: 
+
+	Install Mysql RubyGem
+
+		BPDC$ gem install mysql2
+
+Install WebServer:
+	Webservers available:
+		Apache 1 or 2 
+			Passenger/mod_rails
+		Nginx("Engine X")
+		Lighttpd("Lighty") [faster]
+		Mongrel
+		WEBrick [simple webserver shipped with rails ...we ll be using this for this practice]
+
+
+Install Text Editor:
+	Install Subline text
+		After installation add a PATH of "subl" so that we can access sublime text from command line.
+			BPDC$ echo $PATH
+			/Users/BPDC/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/BPDC/Desktop/Ankur Personal files/MongoDB/apache-maven-3.2.1/bin:/Users/BPDC/Desktop/Ankur Personal files/MongoDB/mongodb-osx-x86_64-2.4.9/bin
+			BPDC$ man ln
+			BPDC$ ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+			BPDC$ subl
+			BPDC$ subl .bash_profile
