@@ -1,13 +1,12 @@
 Configuring UNIX
 
+	Path Setup:
 
-Path Setup:
+	$ cd ~
+	BPDC-CAT-Mac:~ BPDC$ nano .bash_profile
 
-$ cd ~
-BPDC-CAT-Mac:~ BPDC$ nano .bash_profile
-
-PS1="\u$ "
-alias ll="ls -lahG"
+	PS1="\u$ "
+	alias ll="ls -lahG"
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 
@@ -16,98 +15,100 @@ Install command line tools in Mac using the X-code
 	$ gcc -v
 	$ make -v
 
-make and gcc are used to compile the rails applications
+Make and gcc are used to compile the rails applications
 
 Install Homebrew
 	It is package installer for mac
 	It can be installed using 
 		ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
-BPDC$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-==> This script will install:
-/usr/local/bin/brew
-/usr/local/Library/...
-/usr/local/share/man/man1/brew.1
+	BPDC$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+	==> This script will install:
+	/usr/local/bin/brew
+	/usr/local/Library/...
+	/usr/local/share/man/man1/brew.1
 
-Press RETURN to continue or any other key to abort
-==> /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
-Password:
-==> Downloading and installing Homebrew...
-remote: Counting objects: 185579, done.
-remote: Compressing objects: 100% (50872/50872), done.
-remote: Total 185579 (delta 133538), reused 185578 (delta 133538)
-Receiving objects: 100% (185579/185579), 37.16 MiB | 723 KiB/s, done.
-Resolving deltas: 100% (133538/133538), done.
-From https://github.com/Homebrew/homebrew
- * [new branch]      master     -> origin/master
-HEAD is now at 4f719af frege 3.21.500
-==> Installation successful!
-==> Next steps
-Run `brew doctor` before you install anything
-Run `brew help` to get started
+	Press RETURN to continue or any other key to abort
+	==> /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
+	Password:
+	==> Downloading and installing Homebrew...
+	remote: Counting objects: 185579, done.
+	remote: Compressing objects: 100% (50872/50872), done.
+	remote: Total 185579 (delta 133538), reused 185578 (delta 133538)
+	Receiving objects: 100% (185579/185579), 37.16 MiB | 723 KiB/s, done.
+	Resolving deltas: 100% (133538/133538), done.
+	From https://github.com/Homebrew/homebrew
+	 * [new branch]      master     -> origin/master
+	HEAD is now at 4f719af frege 3.21.500
+	==> Installation successful!
+	==> Next steps
+	Run `brew doctor` before you install anything
+	Run `brew help` to get started
 
-BPDC$ brew doctor
-Please note that these warnings are just used to help the Homebrew maintainers
-with debugging if you file an issue. If everything you use Homebrew for is
-working fine: please don't worry and just ignore them. Thanks!
+	BPDC$ brew doctor
+	Please note that these warnings are just used to help the Homebrew maintainers
+	with debugging if you file an issue. If everything you use Homebrew for is
+	working fine: please don't worry and just ignore them. Thanks!
 
-BPDC$ brew update
-Updated Homebrew from 4f719af0 to 0f7c2dfc.
-==> New Formulae
-bibclean
+	BPDC$ brew update
+	Updated Homebrew from 4f719af0 to 0f7c2dfc.
+	==> New Formulae
+	bibclean
 
 
 Installing Ruby 
 
 
-BPDC$ brew install rbenv
-==> Downloading https://github.com/sstephenson/rbenv/archive/v0.4.0.tar.gz
-######################################################################## 100.0%
-==> Caveats
-To use Homebrew's directories rather than ~/.rbenv add to your profile:
-  export RBENV_ROOT=/usr/local/var/rbenv
+	BPDC$ brew install rbenv
+	==> Downloading https://github.com/sstephenson/rbenv/archive/v0.4.0.tar.gz
+	######################################################################## 100.0%
+	==> Caveats
+	To use Homebrew's directories rather than ~/.rbenv add to your profile:
+	  export RBENV_ROOT=/usr/local/var/rbenv
 
-To enable shims and autocompletion add to your profile:
-  if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-==> Summary
-🍺  /usr/local/Cellar/rbenv/0.4.0: 31 files, 152K, built in 25 seconds
+	To enable shims and autocompletion add to your profile:
+	  if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+	==> Summary
+	🍺  /usr/local/Cellar/rbenv/0.4.0: 31 files, 152K, built in 25 seconds
 
-BPDC$ brew install ruby-build
+	BPDC$ brew install ruby-build
 
 
 Install ruby latest version
-BPDC$ rbenv install 2.1.2
+	BPDC$ rbenv install 2.1.2
 
-even after installing the new ruby version, the system uses the old version.
-To tell the system to use the new version we have to use
+	even after installing the new ruby version, the system uses the old version.
+	To tell the system to use the new version we have to use
 
-BPDC$ rbenv rehash
+	BPDC$ rbenv rehash
 
-BPDC$ rbenv global 2.1.2
+	BPDC$ rbenv global 2.1.2
 
-Note: we can use local/shell instead of global to use ruby for current project or for current shell prompt.
+	Note: we can use local/shell instead of global to use ruby for current project or for current shell prompt.
 
 
 Installing RubyGEMs
 
-BPDC$ gem -v
-2.2.2
-BPDC$ which gem
-/Users/BPDC/.rbenv/shims/gem
+	BPDC$ gem -v
+	2.2.2
+	BPDC$ which gem
+	/Users/BPDC/.rbenv/shims/gem
 
-BPDC$ gem list        		//gems that are currently installed on system
+	BPDC$ gem list        		//gems that are currently installed on system
 
-*** LOCAL GEMS ***
+	*** LOCAL GEMS ***
 
-bigdecimal (1.2.4)
-io-console (0.4.2)
-json (1.8.1)
-minitest (4.7.5)
-psych (2.0.5)
-rake (10.1.0)
-rdoc (4.1.0)
-test-unit (2.1.2.0)
+	bigdecimal (1.2.4)
+	io-console (0.4.2)
+	json (1.8.1)
+	minitest (4.7.5)
+	psych (2.0.5)
+	rake (10.1.0)
+	rdoc (4.1.0)
+	test-unit (2.1.2.0)
 
+
+	BPDC$ gem update --system		//update gem
 
  
 
